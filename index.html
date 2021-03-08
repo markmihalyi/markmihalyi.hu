@@ -1,0 +1,58 @@
+<!--------------------------------
+   Made by: Márk Mihályi
+   
+   WEB: www.markmihalyi.hu
+   CONTACT: mail@markmihalyi.hu
+--------------------------------->
+
+<html lang="hu">
+<head>
+    <title>- welcome here, venturer -</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+
+    <meta content="Welcome here!" property="og:title" />
+    <meta content="Márk Mihályi's personal website. Feel free to look inside." property="og:description" />
+    <meta content="https://avatars0.githubusercontent.com/u/52723363?s=460&u=6f081625d7f68cbcc989ccbb84db19efc93b024c&v=4" property="og:image" />
+	
+	<meta name="theme-color" content="#2196F3">
+    <meta name="revisit-after" content="2 days">
+    <meta name="keywords" content="Márk Mihályi, Markio, Facebook, Student, Discord, Developer, Github">
+
+	<link rel="icon" type="image/png" href="assets/images/icon.png">
+	<link href="assets/css/index.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Product+Sans" rel="stylesheet" type="text/css">
+	<script src="assets/js/fontawesome.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="background_main"></div>
+	  <div class="player_ui">
+		<a class="player_button" onclick="document.getElementById('player').play()"><i class="fas fa-play-circle"></i></a>
+		<a class="player_button" onclick="document.getElementById('player').pause()"><i class="fas fa-pause-circle"></i></a>
+		<a class="player_button" onclick="document.getElementById('player').volume += 0.05"><i class="fas fa-volume-up"></i></a>
+		<a class="player_button" onclick="document.getElementById('player').volume -= 0.05"><i class="fas fa-volume-down"></i></a>
+	</div>
+    <div class="center_object">
+      <section class="me">
+        <img draggable="false" src="https://avatars0.githubusercontent.com/u/52723363?s=460&u=6f081625d7f68cbcc989ccbb84db19efc93b024c&v=4" class="image_title">
+        <h1 class="title">Márk Mihályi</h1>
+        <div class="button">
+          <a href="https://discord.gg/vHeF3UV" target="_blank">Discord</a>
+          <a href="https://www.facebook.com/mihalyi.mark31" target="_blank">Facebook</a>
+          <a href="https://www.github.com/markmihalyi" target="_blank">Github</a>
+          <a href="https://www.steamcommunity.com/id/markio" target="_blank">Steam</a>
+          <a href="mailto:mail@markmihalyi.hu" target="_blank">Email</a>
+        </div>
+      </section>
+    </div>
+	<iframe src="assets/silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+	<audio id="player" autoplay loop>
+		<source src="assets/music.mp3" type="audio/mp3">
+	</audio>
+  </body>
+  <script type="text/javascript">
+	var player = document.getElementById("player");
+	player.volume = 0.1;
+  </script>
+</html>
