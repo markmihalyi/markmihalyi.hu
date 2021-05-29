@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^/?$ "https\:\/\/github\.com\/markmihalyi" [R=301,L]
