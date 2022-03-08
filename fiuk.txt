@@ -1,3 +1,6 @@
+-------
+SWITCH:
+-------
 vlan 20
 name Pockok
 vlan 40
@@ -14,6 +17,7 @@ sw port-security mac-address sticky
 sw port-security violation shutdown
 sh
 int range f0/10-15
+sw mode access
 sw access vlan 40
 sw port-security 
 sw port-security maxi 1
@@ -21,6 +25,7 @@ sw port-security mac-address sticky
 sw port-security violation shutdown
 sh
 int range f0/16-20
+sw mode access
 sw access vlan 80
 sw port-security 
 sw port-security maxi 1
@@ -28,6 +33,7 @@ sw port-security mac-address sticky
 sw port-security violation shutdown
 sh
 int range f0/21-24
+sw mode access
 sw access vlan 95
 sw port-security 
 sw port-security maxi 1
@@ -43,4 +49,13 @@ no sh
 int f0/10
 no sh
 int f0/16
+no sh
+
+-------
+ROUTER:
+-------
+(minden vlannak külön-külön)
+int g0/0.VLANID
+encapsulation dot1q VLANID
+ip address $ipv4 $mac
 no sh
