@@ -1,7 +1,7 @@
 #!/bin/sh
 printf "\n*** Az ismeretlen eredetű fájl a merevlemezre került ***\n\n"
 
-printf "*** Ezeket az üzeneteket azért látod, mert egyből lefuttatta a BASH fájlt a rendszer a wget parancs után kiadott paraméterek végett. ***\n"
+printf "*** Ezeket az üzeneteket azért látod, mert egyből lefuttatta a BASH fájlt a rendszer a wget után kiadott bash parancs végett. ***\n"
 
 printf "*** Ha itt most nem ezek a barátságos 'echo' sorok lennének, hanem mondjuk 'rm -rf /', akkor a rendszer pillanatok alatt kritikus\n"
 
