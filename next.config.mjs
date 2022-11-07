@@ -1,5 +1,3 @@
-import { env } from "./src/env/server.mjs";
-
 /**
  * Don't be scared of the generics here.
  * All they do is to give us autocompletion when using this.
@@ -13,6 +11,10 @@ function defineNextConfig(config) {
 }
 
 export default defineNextConfig({
-  reactStrictMode: true,
+  reactStrictMode: false,
   swcMinify: true,
+  i18n: {
+    locales: ['hu'],
+    defaultLocale: 'hu',
+  },
 });
