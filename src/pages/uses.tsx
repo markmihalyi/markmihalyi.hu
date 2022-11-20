@@ -5,20 +5,23 @@ import React from 'react';
 import Terminal from 'components/Terminal';
 import { Transition } from '@headlessui/react';
 import Uses_Heading from 'assets/Uses.png';
+import useLoading from 'common/hooks/useLoading';
 
 const Uses: NextPage = () => {
   const [showTitle, setShowTitle] = React.useState(false);
   const [showTerminal, setShowTerminal] = React.useState(false);
 
-  React.useEffect(() => {
-    setShowTitle(true);
-    setShowTerminal(true);
+  const { loading } = useLoading();
 
-    return () => {
+  React.useEffect(() => {
+    if (loading === true) {
       setShowTitle(false);
       setShowTerminal(false);
-    };
-  }, []);
+    } else {
+      setShowTitle(true);
+      setShowTerminal(true);
+    }
+  }, [loading]);
 
   return (
     <>
@@ -30,24 +33,24 @@ const Uses: NextPage = () => {
         <span className="mb-5 max-w-[9rem]">
           <Transition
             show={showTitle}
-            enter="transition duration-[700ms] ease-out delay-100"
-            enterFrom="transform scale-95 opacity-0"
+            enter="transition duration-[1100ms] ease-out delay-100"
+            enterFrom="transform scale-[98%] opacity-0"
             enterTo="transform scale-100 opacity-100"
-            leave="transition duration-[700ms] ease-out"
-            leaveFrom="transform scale-100 opacity-100"
-            leaveTo="transform scale-95 opacity-0"
+            leave="transition-opacity duration-[500ms]"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
           >
             <Image src={Uses_Heading} alt="Uses" draggable={false} priority={true} />
           </Transition>
         </span>
         <Transition
           show={showTerminal}
-          enter="transition duration-[700ms] ease-out delay-100"
-          enterFrom="transform scale-95 opacity-0"
+          enter="transition duration-[1100ms] ease-out delay-100"
+          enterFrom="transform scale-[98%] opacity-0"
           enterTo="transform scale-100 opacity-100"
-          leave="transition duration-[700ms] ease-out"
-          leaveFrom="transform scale-100 opacity-100"
-          leaveTo="transform scale-95 opacity-0"
+          leave="transition-opacity duration-[500ms]"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
         >
           <Terminal
             title="markmihalyi.hu/uses"

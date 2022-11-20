@@ -1,15 +1,15 @@
-import Link from 'next/link';
+import Link from './Link';
 import React from 'react';
+
+// import Link from 'next/link';
 
 type AProps = React.HTMLProps<HTMLAnchorElement>;
 
 const NavbarItem = React.forwardRef<HTMLAnchorElement, AProps>(function Item(props, ref) {
-  const { href = '#', children, ...rest } = props;
+  const { className, href = '#', children } = props;
   return (
-    <Link href={href}>
-      <a ref={ref} {...rest}>
-        {children}
-      </a>
+    <Link className={className} href={href} ref={ref}>
+      {children}
     </Link>
   );
 });

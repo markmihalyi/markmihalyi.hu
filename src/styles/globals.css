@@ -3,8 +3,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-html {
-  background: url('/background.png') no-repeat top center;
-  background-size: cover;
-}

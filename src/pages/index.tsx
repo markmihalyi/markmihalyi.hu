@@ -6,6 +6,7 @@ import type { NextPage } from 'next';
 import React from 'react';
 import Terminal from 'components/Terminal';
 import { Transition } from '@headlessui/react';
+import useLoading from 'common/hooks/useLoading';
 
 type Code = {
   className?: string;
@@ -16,29 +17,31 @@ const codes = new Map<string, Code>();
 codes.set('location', { value: 'Hungary' });
 codes.set('languages_spoken', { value: ['hu_HU', 'en_US'] });
 codes.set('programming_languages', {
-  className: 'mt-2 md:mt-3',
+  // className: 'mt-2 md:mt-3',s
   value: ['TypeScript', 'JavaScript'],
 });
 codes.set('frameworks', { value: ['React', 'Next.js', 'Node.js', 'Express'] });
 codes.set('databases', { value: ['MySQL', 'MongoDB'] });
-codes.set('soft_skills', {
-  className: 'mt-2 md:mt-3',
-  value: ['Critical Thinker', 'Problem Solver', 'Teamworker'],
-});
+// codes.set('soft_skills', {
+//   className: 'mt-2 md:mt-3',
+//   value: ['Critical Thinker', 'Problem Solver', 'Teamworker'],
+// });
 
 const Home: NextPage = () => {
   const [showTitle, setShowTitle] = React.useState(false);
   const [showTerminal, setShowTerminal] = React.useState(false);
 
-  React.useEffect(() => {
-    setShowTitle(true);
-    setShowTerminal(true);
+  const { loading } = useLoading();
 
-    return () => {
+  React.useEffect(() => {
+    if (loading === true) {
       setShowTitle(false);
       setShowTerminal(false);
-    };
-  }, []);
+    } else {
+      setShowTitle(true);
+      setShowTerminal(true);
+    }
+  }, [loading]);
 
   return (
     <>
@@ -46,18 +49,18 @@ const Home: NextPage = () => {
         <title>Kezdőlap - Márk Mihályi</title>
       </Head>
 
-      <main className="flex flex-col">
-        <div className="mx-32 mt-20 flex flex-col items-center justify-between sm:mt-20 lg:mt-24 2xl:mt-44 2xl:flex 2xl:flex-row">
+      <main className="flex h-screen flex-col justify-center">
+        <div className="mx-32 -mt-40 flex flex-col items-center justify-between 2xl:flex 2xl:flex-row">
           <Transition
             show={showTitle}
             enter="transition-opacity duration-[1000ms] delay-200"
             enterFrom="opacity-0"
             enterTo="opacity-100"
-            leave="transition-opacity duration-[1000ms]"
+            leave="transition-opacity duration-[500ms]"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="mb-8 flex flex-col sm:mb-4 2xl:mr-8">
+            <div className="flex flex-col 2xl:mr-8">
               <h1 className="mb-2 font-poppins text-3xl text-heading sm:mb-4 sm:text-4xl md:mb-6 md:text-5xl 3xl:text-6xl">
                 Hi!
               </h1>
@@ -79,15 +82,15 @@ const Home: NextPage = () => {
             enter="transition duration-[1000ms] ease-out delay-[900ms]"
             enterFrom="transform scale-90 opacity-0"
             enterTo="transform scale-100 opacity-100"
-            leave="transition duration-[1000ms] ease-out"
-            leaveFrom="transform scale-100 opacity-100"
-            leaveTo="transform scale-90 opacity-0"
+            leave="transition-opacity duration-[500ms]"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
           >
             <Terminal
               title="markmihalyi.hu"
-              className="w-[23rem] sm:h-[16rem] sm:w-[33.5rem] md:h-[18rem] md:w-[35rem] lg:h-[20rem] lg:w-[40rem] 2xl:h-[24rem] 2xl:w-[45rem] 3xl:h-[26rem]"
+              className="w-[23rem] sm:h-[16rem] sm:w-[33.5rem] md:h-[18rem] md:w-[35rem] lg:h-[20rem] lg:w-[40rem] 2xl:h-[19rem] 2xl:w-[36rem] 3xl:h-[21rem] 3xl:w-[40rem]"
             >
-              <div className="flex h-full flex-col overflow-auto whitespace-nowrap px-3 py-6 font-jetbrains-mono text-[11px] font-medium sm:mb-0 sm:px-5 sm:py-10 sm:text-xs md:ml-6 md:mt-12 md:py-0 md:px-0 md:text-xs lg:text-sm 2xl:mt-20 3xl:text-base">
+              <div className="flex flex-col overflow-auto whitespace-nowrap px-3 py-6 font-jetbrains-mono text-[11px] font-medium sm:mb-0 sm:px-5 sm:py-10 sm:text-xs md:ml-6 md:mt-12 md:py-0 md:px-0 md:text-xs lg:text-sm 2xl:mt-[3.98rem] 3xl:mt-[4.4rem] 3xl:text-base">
                 <p>
                   <span className="text-code-red">class </span>
                   <span className="text-code-light">About </span>

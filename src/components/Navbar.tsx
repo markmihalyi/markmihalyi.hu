@@ -3,11 +3,12 @@ import { Menu, Transition } from '@headlessui/react';
 import { Bars3Icon } from '@heroicons/react/24/solid';
 import GitHub from 'assets/GitHub.png';
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from './Link';
 import LinkedIn from 'assets/LinkedIn.png';
 import NavbarItem from './NavbarItem';
 import React from 'react';
 import Twitter from 'assets/Twitter.png';
+import useLoading from 'common/hooks/useLoading';
 import { useRouter } from 'next/router';
 
 type NavbarItem = {
@@ -23,13 +24,26 @@ const navbarItems: Array<NavbarItem> = [
 ];
 
 const Navbar: React.FC = () => {
-  const [currentPage, setCurrentPage] = React.useState<string | undefined>();
+  const [currentPage, setCurrentPage] = React.useState<string>('#');
 
   const { pathname } = useRouter();
 
+  const { loading, nextPage } = useLoading();
+
+  const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false);
+
+  const handleMobileMenuClick = () => {
+    setShowMobileMenu(!showMobileMenu);
+  };
+
   React.useEffect(() => {
-    setCurrentPage(pathname.slice(1));
-  }, [pathname]);
+    if (loading) {
+      setCurrentPage(nextPage.slice(1));
+      setShowMobileMenu(false);
+    } else {
+      setCurrentPage(pathname.slice(1));
+    }
+  }, [pathname, loading, nextPage]);
 
   if (currentPage === undefined) {
     return <header className="flex h-[70px] flex-col md:h-[94px]" />;
@@ -38,39 +52,39 @@ const Navbar: React.FC = () => {
   return (
     <header className="flex flex-col">
       <div className="mx-4 mt-8 flex justify-between md:mx-5 md:mt-14 lg:mx-12 xl:mx-32">
-        <div className="flex items-center lg:hidden">
+        <div className="flex items-center lg:hidden" onClick={handleMobileMenuClick}>
           <Menu>
-            {({ open }) => (
-              <div className="flex flex-col">
-                <Menu.Button className="float-left flex h-8 w-8 items-center justify-center rounded-[5px] bg-white p-1">
-                  <Bars3Icon className="h-7 w-7 text-black" />
-                </Menu.Button>
+            {/* {({ open }) => ( */}
+            <div className="flex flex-col">
+              <Menu.Button className="float-left flex h-8 w-8 items-center justify-center rounded-[5px] bg-white p-1">
+                <Bars3Icon className="h-7 w-7 text-black" />
+              </Menu.Button>
 
-                <Transition
-                  show={open}
-                  enter="transition duration-100 ease-out"
-                  enterFrom="transform scale-95 opacity-0"
-                  enterTo="transform scale-100 opacity-100"
-                  leave="transition duration-75 ease-out"
-                  leaveFrom="transform scale-100 opacity-100"
-                  leaveTo="transform scale-95 opacity-0"
-                  className="absolute z-50 mt-10"
-                >
-                  <Menu.Items className="mt-3 inline-flex min-w-[10rem] flex-col rounded-lg bg-light p-2 text-center font-poppins">
-                    {navbarItems.map((item) => (
-                      <Menu.Item key={item.href}>
-                        <NavbarItem
-                          className="m-1 rounded-md bg-[rgba(0,0,0,0.1)] p-2"
-                          href={item.href}
-                        >
-                          {item.label}
-                        </NavbarItem>
-                      </Menu.Item>
-                    ))}
-                  </Menu.Items>
-                </Transition>
-              </div>
-            )}
+              <Transition
+                show={showMobileMenu}
+                enter="transition duration-100 ease-out"
+                enterFrom="transform scale-95 opacity-0"
+                enterTo="transform scale-100 opacity-100"
+                leave="transition duration-75 ease-out"
+                leaveFrom="transform scale-100 opacity-100"
+                leaveTo="transform scale-95 opacity-0"
+                className="absolute z-50 mt-10"
+              >
+                <Menu.Items className="mt-3 inline-flex min-w-[10rem] flex-col rounded-lg bg-light p-2 text-center font-poppins">
+                  {navbarItems.map((item) => (
+                    <Menu.Item key={item.href}>
+                      <NavbarItem
+                        className="m-1 rounded-md bg-[rgba(0,0,0,0.1)] p-2"
+                        href={item.href}
+                      >
+                        {item.label}
+                      </NavbarItem>
+                    </Menu.Item>
+                  ))}
+                </Menu.Items>
+              </Transition>
+            </div>
+            {/* )} */}
           </Menu>
         </div>
 

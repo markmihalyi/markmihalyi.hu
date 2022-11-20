@@ -5,20 +5,23 @@ import { NextPage } from 'next';
 import React from 'react';
 import Terminal from 'components/Terminal';
 import { Transition } from '@headlessui/react';
+import useLoading from 'common/hooks/useLoading';
 
 const AboutMe: NextPage = () => {
   const [showTitle, setShowTitle] = React.useState(false);
   const [showTerminal, setShowTerminal] = React.useState(false);
 
-  React.useEffect(() => {
-    setShowTitle(true);
-    setShowTerminal(true);
+  const { loading } = useLoading();
 
-    return () => {
+  React.useEffect(() => {
+    if (loading === true) {
       setShowTitle(false);
       setShowTerminal(false);
-    };
-  }, []);
+    } else {
+      setShowTitle(true);
+      setShowTerminal(true);
+    }
+  }, [loading]);
 
   return (
     <>
@@ -30,24 +33,24 @@ const AboutMe: NextPage = () => {
         <span className="mb-5 max-w-[18rem]">
           <Transition
             show={showTitle}
-            enter="transition duration-[700ms] ease-out delay-100"
-            enterFrom="transform scale-95 opacity-0"
+            enter="transition duration-[2000ms] ease-out delay-100"
+            enterFrom="transform scale-[98%] opacity-0"
             enterTo="transform scale-100 opacity-100"
-            leave="transition duration-[700ms] ease-out"
-            leaveFrom="transform scale-100 opacity-100"
-            leaveTo="transform scale-95 opacity-0"
+            leave="transition-opacity duration-[500ms]"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
           >
             <Image src={AboutMe_Heading} alt="About me" draggable={false} priority={true} />
           </Transition>
         </span>
         <Transition
           show={showTerminal}
-          enter="transition duration-[700ms] ease-out delay-100"
-          enterFrom="transform scale-95 opacity-0"
+          enter="transition duration-[2000ms] ease-out delay-100"
+          enterFrom="transform scale-[98%] opacity-0"
           enterTo="transform scale-100 opacity-100"
-          leave="transition duration-[700ms] ease-out delay-[500ms]"
-          leaveFrom="transform scale-100 opacity-100"
-          leaveTo="transform scale-95 opacity-0"
+          leave="transition-opacity duration-[500ms]"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
         >
           <Terminal
             title="markmihalyi.hu/aboutme"
@@ -75,9 +78,7 @@ const AboutMe: NextPage = () => {
                 <span className="font-bold"> MySQL </span>
                 for storing data securely. When I was 17, I switched from PHP to
                 <span className="font-bold"> JavaScript </span>I liked both of them, however, I
-                wanted to learn <span className="font-bold">React</span>, so I decided to switch.{' '}
-                <br className="hidden 2xl:block" />
-                In retrospect, that was a fantastic decision.
+                wanted to learn <span className="font-bold">React</span>, so I decided to switch.
               </p>
               <p className="mt-12 font-bold tracking-wide text-heading">PRESENT</p>
               <p className="mt-1 font-light tracking-tight text-light">

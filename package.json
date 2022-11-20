@@ -1,6 +1,6 @@
 {
   "name": "markmihalyi.hu",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -13,7 +13,8 @@
     "@heroicons/react": "^2.0.10",
     "next": "12.2.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "sharp": "^0.31.2"
   },
   "devDependencies": {
     "@types/node": "18.0.0",

@@ -1,22 +1,25 @@
 import { NextPage } from 'next';
 import React from 'react';
 import { Transition } from '@headlessui/react';
+import useLoading from 'common/hooks/useLoading';
 
 const Contact: NextPage = () => {
   const [showText, setShowText] = React.useState(false);
 
-  React.useEffect(() => {
-    setShowText(true);
+  const { loading } = useLoading();
 
-    return () => {
+  React.useEffect(() => {
+    if (loading === true) {
       setShowText(false);
-    };
-  }, []);
+    } else {
+      setShowText(true);
+    }
+  }, [loading]);
 
   return (
     <Transition
       show={showText}
-      enter="transition-opacity duration-[500ms] delay-100"
+      enter="transition-opacity duration-[800ms] delay-100"
       enterFrom="opacity-0"
       enterTo="opacity-100"
       leave="transition-opacity duration-[500ms]"
