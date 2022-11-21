@@ -1,12 +1,12 @@
-import Code from 'components/Code';
+import Code from '../components/Code';
 import FullStack from 'assets/FullStack.png';
 import Head from 'next/head';
 import Image from 'next/image';
 import type { NextPage } from 'next';
 import React from 'react';
-import Terminal from 'components/Terminal';
+import Terminal from '../components/Terminal';
 import { Transition } from '@headlessui/react';
-import useLoading from 'common/hooks/useLoading';
+import useLoading from '../common/hooks/useLoading';
 
 type Code = {
   className?: string;
@@ -46,11 +46,11 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Kezdőlap - Márk Mihályi</title>
+        <title>Home | Márk Mihályi</title>
       </Head>
 
       <main className="flex h-screen flex-col justify-center">
-        <div className="mx-32 -mt-40 flex flex-col items-center justify-between 2xl:flex 2xl:flex-row">
+        <div className="mx-[7vw] -mt-40 flex flex-col items-center justify-between xl:flex xl:flex-row">
           <Transition
             show={showTitle}
             enter="transition-opacity duration-[1000ms] delay-200"
@@ -60,14 +60,14 @@ const Home: NextPage = () => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="flex flex-col 2xl:mr-8">
-              <h1 className="mb-2 font-poppins text-3xl text-heading sm:mb-4 sm:text-4xl md:mb-6 md:text-5xl 3xl:text-6xl">
+            <div className="mb-3 flex flex-col 2xl:mb-0 2xl:mr-8">
+              <h1 className="mb-2 font-poppins text-3xl text-heading sm:mb-4 sm:text-4xl md:mb-6 md:text-5xl xl:text-[3vw] 3xl:text-6xl">
                 Hi!
               </h1>
-              <h1 className="mb-2 font-poppins text-3xl font-bold text-white sm:mb-4 sm:text-4xl md:mb-6 md:text-5xl 3xl:text-6xl">
-                I&apos;m Márk Mihályi,
+              <h1 className="mb-2 font-poppins text-3xl font-bold text-white sm:mb-4 sm:text-4xl md:mb-6 md:text-5xl xl:w-[35vw] xl:text-[3vw] 3xl:text-6xl">
+                I am Márk Mihályi,
               </h1>
-              <span className="w-[22rem] sm:w-[32rem] md:w-[35rem] lg:w-[43rem] 3xl:w-full">
+              <span className="w-[22rem] sm:w-[32rem] md:w-[35rem] lg:w-[43rem] xl:w-[40vw] 3xl:w-full">
                 <Image
                   src={FullStack}
                   alt="Full-Stack Developer."
@@ -88,9 +88,9 @@ const Home: NextPage = () => {
           >
             <Terminal
               title="markmihalyi.hu"
-              className="w-[23rem] sm:h-[16rem] sm:w-[33.5rem] md:h-[18rem] md:w-[35rem] lg:h-[20rem] lg:w-[40rem] 2xl:h-[19rem] 2xl:w-[36rem] 3xl:h-[21rem] 3xl:w-[40rem]"
+              className="w-[23rem] sm:h-[16rem] sm:w-[33.5rem] md:h-[18rem] md:w-[35rem] lg:h-[20vw] lg:w-[40vw]"
             >
-              <div className="flex flex-col overflow-auto whitespace-nowrap px-3 py-6 font-jetbrains-mono text-[11px] font-medium sm:mb-0 sm:px-5 sm:py-10 sm:text-xs md:ml-6 md:mt-12 md:py-0 md:px-0 md:text-xs lg:text-sm 2xl:mt-[3.98rem] 3xl:mt-[4.4rem] 3xl:text-base">
+              <div className="flex flex-col overflow-auto whitespace-nowrap px-3 py-6 font-jetbrains-mono text-[11px] font-medium sm:mb-0 sm:px-5 sm:py-10 sm:text-xs md:ml-6 md:mt-12 md:py-0 md:px-0 md:text-xs lg:text-[1vw] 2xl:mt-[3.98rem] 3xl:mt-[4.4rem] 3xl:text-base">
                 <p>
                   <span className="text-code-red">class </span>
                   <span className="text-code-light">About </span>

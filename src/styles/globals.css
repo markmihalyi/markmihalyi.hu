@@ -1,5 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;700&family=Fira+Code:wght@300;400;500;700&family=JetBrains+Mono:wght@500&family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;700&family=Fira+Code:wght@300;400;500;700&family=JetBrains+Mono:wght@500&family=Poppins:wght@400;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.underlined-hover {
+  transition: all ease-in-out 0.2s;
+  position: relative;
+}
+
+.underlined-hover::after {
+  content: '';
+  position: absolute;
+  width: 0px;
+  height: 2px;
+  left: 50%;
+  bottom: -2px;
+  transition: all ease-in-out 0.2s;
+  background-image: linear-gradient(
+    90deg,
+    hsl(166deg 82% 31%) 0%,
+    hsl(166deg 82% 39%) 50%,
+    hsl(166deg 82% 45%) 100%
+  );
+  border-radius: 1px;
+}
+
+.underlined-hover:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.underlined {
+  position: relative;
+}
+
+.underlined::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0%;
+  bottom: -2px;
+  transition: all ease-in-out 0.2s;
+  background-image: linear-gradient(
+    90deg,
+    hsl(166deg 82% 31%) 0%,
+    hsl(166deg 82% 39%) 50%,
+    hsl(166deg 82% 45%) 100%
+  );
+  border-radius: 1px;
+}

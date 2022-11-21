@@ -1,4 +1,4 @@
-import LoadingContext, { LoadingContextType } from 'common/providers/LoadingProvider';
+import LoadingContext, { LoadingContextType } from '../../common/providers/LoadingProvider';
 
 import React from 'react';
 

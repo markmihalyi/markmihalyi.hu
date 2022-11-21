@@ -8,15 +8,10 @@ import LinkedIn from 'assets/LinkedIn.png';
 import NavbarItem from './NavbarItem';
 import React from 'react';
 import Twitter from 'assets/Twitter.png';
-import useLoading from 'common/hooks/useLoading';
+import useLoading from '../common/hooks/useLoading';
 import { useRouter } from 'next/router';
 
-type NavbarItem = {
-  href: string;
-  label: string;
-};
-
-const navbarItems: Array<NavbarItem> = [
+const pages: Array<{ href: string; label: string }> = [
   { href: '/', label: 'Home' },
   { href: '/aboutme', label: 'About me' },
   { href: '/uses', label: 'Uses' },
@@ -46,15 +41,15 @@ const Navbar: React.FC = () => {
   }, [pathname, loading, nextPage]);
 
   if (currentPage === undefined) {
-    return <header className="flex h-[70px] flex-col md:h-[94px]" />;
+    return <header className="flex h-[70px] flex-col md:h-16" />;
   }
 
   return (
     <header className="flex flex-col">
-      <div className="mx-4 mt-8 flex justify-between md:mx-5 md:mt-14 lg:mx-12 xl:mx-32">
+      <div className="mx-4 mt-16 flex justify-between md:mx-[7vw]">
+        {/* Mobilos navbar */}
         <div className="flex items-center lg:hidden" onClick={handleMobileMenuClick}>
           <Menu>
-            {/* {({ open }) => ( */}
             <div className="flex flex-col">
               <Menu.Button className="float-left flex h-8 w-8 items-center justify-center rounded-[5px] bg-white p-1">
                 <Bars3Icon className="h-7 w-7 text-black" />
@@ -71,61 +66,46 @@ const Navbar: React.FC = () => {
                 className="absolute z-50 mt-10"
               >
                 <Menu.Items className="mt-3 inline-flex min-w-[10rem] flex-col rounded-lg bg-light p-2 text-center font-poppins">
-                  {navbarItems.map((item) => (
-                    <Menu.Item key={item.href}>
+                  {pages.map((page) => (
+                    <Menu.Item key={page.href}>
                       <NavbarItem
                         className="m-1 rounded-md bg-[rgba(0,0,0,0.1)] p-2"
-                        href={item.href}
+                        href={page.href}
                       >
-                        {item.label}
+                        {page.label}
                       </NavbarItem>
                     </Menu.Item>
                   ))}
                 </Menu.Items>
               </Transition>
             </div>
-            {/* )} */}
           </Menu>
         </div>
 
+        {/* Navbar */}
         <div className="hidden lg:flex lg:items-center">
-          {currentPage === '' ? (
-            <span className="mr-12 border-b-2 border-heading font-poppins text-lg text-white">
-              <Link href="/">Home</Link>
-            </span>
-          ) : (
-            <span className="mr-12 font-poppins text-lg text-white">
-              <Link href="/">Home</Link>
-            </span>
-          )}
-          {currentPage === 'aboutme' ? (
-            <span className="mr-12 border-b-2 border-heading font-poppins text-lg text-white">
-              <Link href="/aboutme">About me</Link>
-            </span>
-          ) : (
-            <span className="mr-12 font-poppins text-lg text-white">
-              <Link href="/aboutme">About me</Link>
-            </span>
-          )}
-          {currentPage === 'uses' ? (
-            <span className="mr-12 border-b-2 border-heading font-poppins text-lg text-white">
-              <Link href="/uses">Uses</Link>
-            </span>
-          ) : (
-            <span className="mr-12 font-poppins text-lg text-white">
-              <Link href="/uses">Uses</Link>
-            </span>
-          )}
-          {currentPage === 'contact' ? (
-            <span className="mr-12 border-b-2 border-heading font-poppins text-lg text-white">
-              <Link href="/contact">Contact</Link>
-            </span>
-          ) : (
-            <span className="mr-12 font-poppins text-lg text-white">
-              <Link href="/contact">Contact</Link>
-            </span>
-          )}
+          {pages.map((page) => (
+            <React.Fragment key={page.href}>
+              {currentPage === page.href.slice(1) ? (
+                <Link
+                  href={page.href}
+                  className="underlined mr-12 font-poppins text-lg text-white transition duration-300"
+                >
+                  {page.label}
+                </Link>
+              ) : (
+                <Link
+                  href={page.href}
+                  className="underlined-hover mr-12 font-poppins text-lg text-gray-300 transition duration-300 hover:text-white"
+                >
+                  {page.label}
+                </Link>
+              )}
+            </React.Fragment>
+          ))}
         </div>
+
+        {/* Közösségi média gombok */}
         <div className="flex">
           <a
             className="mr-4 md:mr-7"

@@ -1,5 +1,5 @@
 import React from 'react';
-import useLoading from 'common/hooks/useLoading';
+import useLoading from '../common/hooks/useLoading';
 import { useRouter } from 'next/router';
 
 type Props = {
@@ -8,6 +8,8 @@ type Props = {
   className?: string | undefined;
   ref?: React.Ref<HTMLAnchorElement> | undefined;
 };
+
+let activeTimeout: NodeJS.Timeout | null = null;
 
 const Link: React.FC<Props> = ({ href, children, className, ref }) => {
   const router = useRouter();
@@ -19,9 +21,17 @@ const Link: React.FC<Props> = ({ href, children, className, ref }) => {
     setLoading(true);
     setNextPage(href);
 
-    setTimeout(async () => {
+    if (activeTimeout !== null) {
+      clearTimeout(activeTimeout);
+      activeTimeout = null;
+    }
+
+    activeTimeout = setTimeout(async () => {
+      if (activeTimeout === null) return;
       await router.push(href);
       setLoading(false);
+      clearTimeout(activeTimeout);
+      activeTimeout = null;
     }, 500);
   };
 

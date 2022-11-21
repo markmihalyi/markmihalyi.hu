@@ -2,10 +2,10 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { NextPage } from 'next';
 import React from 'react';
-import Terminal from 'components/Terminal';
+import Terminal from '../components/Terminal';
 import { Transition } from '@headlessui/react';
 import Uses_Heading from 'assets/Uses.png';
-import useLoading from 'common/hooks/useLoading';
+import useLoading from '../common/hooks/useLoading';
 
 const Uses: NextPage = () => {
   const [showTitle, setShowTitle] = React.useState(false);
@@ -26,7 +26,7 @@ const Uses: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Uses - Márk Mihályi</title>
+        <title>Uses | Márk Mihályi</title>
       </Head>
 
       <div className="mt-12 flex flex-col items-center justify-center sm:mt-4 md:mt-4 lg:mt-10 xl:mt-16 2xl:mt-16">
@@ -60,58 +60,58 @@ const Uses: NextPage = () => {
               <div className="mb-6 flex flex-col text-center lg:mb-0">
                 <p className="font-bold tracking-wide text-heading">LAPTOP SPECS</p>
                 <p className="mt-1 font-light tracking-tight text-light lg:mt-2">
-                  <b>Type:</b> HP Victus 16
+                  <span className="font-medium">Type:</span> HP Victus 16
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
-                  <b>GPU:</b> Nvidia RTX 3060
+                  <span className="font-medium">GPU:</span> Nvidia RTX 3060
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
-                  <b>CPU:</b> Intel Core i5-11400H
+                  <span className="font-medium">CPU:</span> Intel Core i5-11400H
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
-                  <b>RAM:</b> 8GB DDR4 2933Mhz
+                  <span className="font-medium">RAM:</span> 32GB DDR4 3200MHz
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
-                  <b>SSD:</b> 512GB M.2 NVME
+                  <span className="font-medium">SSD:</span> 512GB M.2 NVME
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
-                  <b>OS:</b> Windows 11 Pro
+                  <span className="font-medium">OS:</span> Windows 11 Pro
                 </p>
               </div>
               <div className="mb-6 flex flex-col text-center lg:ml-12 lg:mb-0">
                 <p className="font-bold tracking-wide text-heading">SOFTWARE</p>
                 <p className="mt-1 font-light tracking-tight text-light lg:mt-2">
-                  <b>Editor:</b> Visual Studio Code
+                  <span className="font-medium">Editor:</span> Visual Studio Code
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
-                  <b>Testing APIs:</b> Insomnia
+                  <span className="font-medium">Testing APIs:</span> Insomnia
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
-                  <b>Organization:</b> Trello
+                  <span className="font-medium">Organization:</span> Trello
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
-                  <b>Web design:</b> Figma
+                  <span className="font-medium">Web design:</span> Figma
                 </p>
               </div>
               <div className="mb-6 flex flex-col text-center lg:mb-0">
-                <p className="font-bold tracking-wide text-heading">PERIPHERALS, OTHER GEAR</p>
+                <p className="font-bold tracking-wide text-heading">PERIPHERALS</p>
                 <p className="mt-1 font-light tracking-tight text-light lg:mt-2">
-                  <b>Mouse:</b> Logitech G703
+                  <span className="font-medium">Mouse:</span> Logitech G703
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
-                  <b>Keyboard:</b> Cooler Master CK550
+                  <span className="font-medium">Keyboard:</span> Cooler Master CK550
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
-                  <b>Mousepad:</b> HyperX Fury S Pro
+                  <span className="font-medium">Mousepad:</span> HyperX Fury S Pro
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
-                  <b>Microphone:</b> Auna MIC-900B
+                  <span className="font-medium">Microphone:</span> Auna MIC-900B
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
-                  <b>Headphones:</b> HyperX Cloud
+                  <span className="font-medium">Headphones:</span> Beyerd. DT 770 PRO
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
-                  <b>Smartwatch:</b> Galaxy Watch 4
+                  <span className="font-medium">Monitor:</span> Huawei Mateview GT 34
                 </p>
               </div>
             </div>
