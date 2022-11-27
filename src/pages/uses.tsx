@@ -33,9 +33,9 @@ const Uses: NextPage = () => {
         <span className="mb-5 max-w-[9rem]">
           <Transition
             show={showTitle}
-            enter="transition duration-[1100ms] ease-out delay-100"
-            enterFrom="transform scale-[98%] opacity-0"
-            enterTo="transform scale-100 opacity-100"
+            enter="transition-opacity duration-1000 delay-100"
+            enterFrom="transform opacity-0"
+            enterTo="transform opacity-100"
             leave="transition-opacity duration-[500ms]"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
@@ -45,7 +45,7 @@ const Uses: NextPage = () => {
         </span>
         <Transition
           show={showTerminal}
-          enter="transition duration-[1100ms] ease-out delay-100"
+          enter="transition duration-1000 delay-100"
           enterFrom="transform scale-[98%] opacity-0"
           enterTo="transform scale-100 opacity-100"
           leave="transition-opacity duration-[500ms]"
@@ -54,7 +54,7 @@ const Uses: NextPage = () => {
         >
           <Terminal
             title="markmihalyi.hu/uses"
-            className="mb-8 w-[23rem] sm:w-[40rem] md:w-[48rem] lg:mb-0 lg:w-[65rem] xl:w-[80rem] 2xl:w-[85rem] 3xl:w-[85rem]"
+            className="mb-8 w-[95vw] max-w-[1280px] lg:mb-0 lg:w-[92vw] xl:w-[91vw]"
           >
             <div className="h-full px-10 py-10 font-fira-code text-base lg:flex lg:flex-row lg:flex-wrap lg:justify-between xl:py-28 xl:text-xl 2xl:py-32 3xl:py-40">
               <div className="mb-6 flex flex-col text-center lg:mb-0">
@@ -84,10 +84,10 @@ const Uses: NextPage = () => {
                   <span className="font-medium">Editor:</span> Visual Studio Code
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
-                  <span className="font-medium">Testing APIs:</span> Insomnia
+                  <span className="font-medium">Project management:</span> Trello
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
-                  <span className="font-medium">Organization:</span> Trello
+                  <span className="font-medium">Testing APIs:</span> Insomnia
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
                   <span className="font-medium">Web design:</span> Figma

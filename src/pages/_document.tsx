@@ -26,7 +26,7 @@ const Document = () => {
           }}
         />
       </Head>
-      <body className="bg-transparent 2xl:overflow-y-hidden">
+      <body className="h-screen">
         <Main />
         <NextScript />
       </body>

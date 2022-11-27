@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  background-color: #141e30; /* régi böngésző esetén is legyen háttérszín */
+  background-image: linear-gradient(to right, #141e30, #0b3361);
+}
+
 .underlined-hover {
   transition: all ease-in-out 0.2s;
   position: relative;

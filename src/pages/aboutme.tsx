@@ -33,9 +33,9 @@ const AboutMe: NextPage = () => {
         <span className="mb-5 max-w-[18rem]">
           <Transition
             show={showTitle}
-            enter="transition duration-[2000ms] ease-out delay-100"
-            enterFrom="transform scale-[98%] opacity-0"
-            enterTo="transform scale-100 opacity-100"
+            enter="transition-opacity duration-1000 delay-100"
+            enterFrom="transform opacity-0"
+            enterTo="transform opacity-100"
             leave="transition-opacity duration-[500ms]"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
@@ -45,7 +45,7 @@ const AboutMe: NextPage = () => {
         </span>
         <Transition
           show={showTerminal}
-          enter="transition duration-[2000ms] ease-out delay-100"
+          enter="transition duration-1000 delay-100"
           enterFrom="transform scale-[98%] opacity-0"
           enterTo="transform scale-100 opacity-100"
           leave="transition-opacity duration-[500ms]"
@@ -54,7 +54,7 @@ const AboutMe: NextPage = () => {
         >
           <Terminal
             title="markmihalyi.hu/aboutme"
-            className="mb-8 w-[95vw] max-w-[1190px] lg:mb-0 lg:w-[92vw] xl:w-[91vw]"
+            className="mb-8 w-[95vw] max-w-[1280px] lg:mb-0 lg:w-[92vw] xl:w-[91vw]"
           >
             <div className="px-10 py-10 text-justify font-fira-code text-base lg:text-xl xl:py-14 2xl:py-16 3xl:py-20">
               <p className="font-bold tracking-wide text-heading">

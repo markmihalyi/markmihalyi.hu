@@ -16,16 +16,9 @@ type Code = {
 const codes = new Map<string, Code>();
 codes.set('location', { value: 'Hungary' });
 codes.set('languages_spoken', { value: ['hu_HU', 'en_US'] });
-codes.set('programming_languages', {
-  // className: 'mt-2 md:mt-3',s
-  value: ['TypeScript', 'JavaScript'],
-});
-codes.set('frameworks', { value: ['React', 'Next.js', 'Node.js', 'Express'] });
+codes.set('programming_languages', { value: ['TypeScript', 'JavaScript'] });
+codes.set('technologies', { value: ['React', 'Next.js', 'Express.js', 'Node.js'] });
 codes.set('databases', { value: ['MySQL', 'MongoDB'] });
-// codes.set('soft_skills', {
-//   className: 'mt-2 md:mt-3',
-//   value: ['Critical Thinker', 'Problem Solver', 'Teamworker'],
-// });
 
 const Home: NextPage = () => {
   const [showTitle, setShowTitle] = React.useState(false);
@@ -49,8 +42,8 @@ const Home: NextPage = () => {
         <title>Home | Márk Mihályi</title>
       </Head>
 
-      <main className="flex h-screen flex-col justify-center">
-        <div className="mx-[7vw] -mt-40 flex flex-col items-center justify-between xl:flex xl:flex-row">
+      <main className="flex h-[80vh] flex-col justify-center sm:h-[80vh] md:h-[85vh] lg:h-[85vh]">
+        <div className="mx-[7vw] flex flex-col items-center justify-between xl:flex xl:flex-row">
           <Transition
             show={showTitle}
             enter="transition-opacity duration-[1000ms] delay-200"
@@ -60,14 +53,14 @@ const Home: NextPage = () => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="mb-3 flex flex-col 2xl:mb-0 2xl:mr-8">
-              <h1 className="mb-2 font-poppins text-3xl text-heading sm:mb-4 sm:text-4xl md:mb-6 md:text-5xl xl:text-[3vw] 3xl:text-6xl">
+            <div className="mb-2 flex flex-col sm:mb-1 md:mb-3 2xl:mb-0 2xl:mr-8">
+              <h1 className="mb-2 select-none font-poppins text-3xl text-heading sm:mb-[0.6vw] sm:text-[5.2vw] md:mb-[1.1vw] md:text-[4.1vw] xl:text-[3.4vw] 3xl:text-6xl">
                 Hi!
               </h1>
-              <h1 className="mb-2 font-poppins text-3xl font-bold text-white sm:mb-4 sm:text-4xl md:mb-6 md:text-5xl xl:w-[35vw] xl:text-[3vw] 3xl:text-6xl">
-                I am Márk Mihályi,
+              <h1 className="mb-2 select-none font-poppins text-3xl font-bold text-white sm:mb-[0.6vw] sm:text-[5.2vw] md:mb-[1.1vw] md:text-[4.1vw] xl:text-[3.4vw] 3xl:text-6xl">
+                I am <span className="select-text">Márk Mihályi</span>,
               </h1>
-              <span className="w-[22rem] sm:w-[32rem] md:w-[35rem] lg:w-[43rem] xl:w-[40vw] 3xl:w-full">
+              <span className="w-[90vw] select-none sm:w-[73vw] md:w-[58vw] xl:w-[45vw] 3xl:w-full">
                 <Image
                   src={FullStack}
                   alt="Full-Stack Developer."
@@ -88,10 +81,10 @@ const Home: NextPage = () => {
           >
             <Terminal
               title="markmihalyi.hu"
-              className="w-[23rem] sm:h-[16rem] sm:w-[33.5rem] md:h-[18rem] md:w-[35rem] lg:h-[20vw] lg:w-[40vw]"
+              className="h-[45vw] w-[92vw] sm:h-[25vw] sm:w-[74vw] md:h-[24vw] md:w-[59vw] xl:h-[18vw] xl:w-[37vw]"
             >
-              <div className="flex flex-col overflow-auto whitespace-nowrap px-3 py-6 font-jetbrains-mono text-[11px] font-medium sm:mb-0 sm:px-5 sm:py-10 sm:text-xs md:ml-6 md:mt-12 md:py-0 md:px-0 md:text-xs lg:text-[1vw] 2xl:mt-[3.98rem] 3xl:mt-[4.4rem] 3xl:text-base">
-                <p>
+              <div className="ml-[3vw] flex h-full flex-col justify-center overflow-y-hidden overflow-x-visible whitespace-nowrap font-jetbrains-mono text-[11px] font-medium sm:ml-[2vw] sm:text-xs md:ml-[2.5vw] md:text-[1.4vw] lg:ml-[1.5vw] lg:text-[1.5vw] xl:text-[0.9vw]">
+                <p className="md:mb-[0.2vw] lg:mb-[0.3vw]">
                   <span className="text-code-red">class </span>
                   <span className="text-code-light">About </span>
                   <span className="text-code-red">extends </span>
@@ -100,7 +93,7 @@ const Home: NextPage = () => {
                 {Array.from(codes.entries()).map(([property, { className, value }]) => (
                   <Code key={property} className={className} property={property} value={value} />
                 ))}
-                <p>
+                <p className="md:mt-[0.2vw] lg:mt-[0.3vw]">
                   <span className="text-code-light">{'}'}</span>
                 </p>
               </div>
