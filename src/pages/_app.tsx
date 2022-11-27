@@ -10,7 +10,7 @@ const App: AppType = ({ Component, pageProps }) => {
   return (
     <LoadingContextProvider>
       <Head>
-        <title>Márk Mihályi | FullStack Developer</title>
+        <title>Márk Mihályi | FullStack Engineer</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Navbar />

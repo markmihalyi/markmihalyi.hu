@@ -9,7 +9,8 @@ const Document = () => {
     <Html>
       <Head>
         <meta charSet="utf-8" />
-        <meta name="description" content="Márk Mihályi's personal website" />
+        <meta name="description" content="Márk Mihályi's portfolio" />
+        <meta name="robots" content="all" />
         <link rel="icon" href="/favicon.png" />
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="anonymous" />
         <link
