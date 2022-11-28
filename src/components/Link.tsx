@@ -35,11 +35,8 @@ const Link: React.FC<Props> = ({ href, children, className, ref }) => {
     }, 500);
   };
 
-  let classes = 'cursor-pointer';
-  if (className) classes += ` ${className}`;
-
   return (
-    <a className={classes} onClick={handleClick} ref={ref}>
+    <a className={className} href={href} onClick={handleClick} ref={ref}>
       {children}
     </a>
   );
