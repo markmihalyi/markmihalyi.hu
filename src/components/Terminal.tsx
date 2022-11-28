@@ -18,9 +18,9 @@ const Terminal: React.FC<Props> = ({ className, title, children }) => {
           <span className="inline-block h-[2.2vw] w-[2.2vw] rounded-[50%] bg-widget-green sm:h-[1.4vw] sm:w-[1.4vw] md:h-[1vw] md:w-[1vw] xl:h-[0.7vw] xl:w-[0.7vw]" />
         </div>
         <div className="mr-auto -ml-12 inline-flex items-center justify-center rounded-[5px] bg-widget-gray px-6 sm:px-12 md:h-5">
-          <h6 className="cursor-default select-none font-fira-sans text-xs font-light tracking-wide text-white">
+          <span className="cursor-default select-none font-fira-sans text-xs font-light tracking-wide text-white">
             {title}
-          </h6>
+          </span>
         </div>
       </div>
       {children}
