@@ -51,7 +51,11 @@ const Navbar: React.FC = () => {
         <div className="flex items-center lg:hidden" onClick={handleMobileMenuClick}>
           <Menu>
             <div className="flex flex-col">
-              <Menu.Button className="float-left flex h-8 w-8 items-center justify-center rounded-[5px] bg-white p-1">
+              <Menu.Button
+                className="float-left flex h-8 w-8 items-center justify-center rounded-[5px] bg-white p-1"
+                id="navigation"
+                aria-label="Navigation Menu"
+              >
                 <Bars3Icon className="h-7 w-7 text-black" />
               </Menu.Button>
 
