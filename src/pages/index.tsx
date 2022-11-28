@@ -42,7 +42,7 @@ const Home: NextPage = () => {
         <title>Home | Márk Mihályi</title>
       </Head>
 
-      <main className="flex h-[80vh] flex-col justify-center sm:h-[80vh] md:h-[85vh] lg:h-[85vh]">
+      <main className="flex h-[75vh] flex-col justify-center sm:h-[80vh] md:h-[85vh] lg:h-[85vh]">
         <div className="mx-[7vw] flex flex-col items-center justify-between xl:flex xl:flex-row">
           <Transition
             show={showTitle}

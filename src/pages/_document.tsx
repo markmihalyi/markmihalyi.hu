@@ -30,7 +30,7 @@ const Document = () => {
           }}
         />
       </Head>
-      <body className="h-screen">
+      <body>
         <Main />
         <NextScript />
       </body>
