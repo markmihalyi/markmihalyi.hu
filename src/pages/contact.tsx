@@ -34,11 +34,11 @@ const Contact: NextPage = () => {
         leaveTo="opacity-0"
       >
         <div className="hidden flex-col items-center text-center lg:flex">
-          <h1 className="font-poppins text-[2vw] font-bold text-light">
+          <h1 className="font-poppins text-[2vw] font-bold text-light 4xl:text-[38px]">
             Do you have a project in mind? Let{"'"}s make it happen!
           </h1>
           <a
-            className="w-max font-poppins text-[1.8vw] text-heading transition duration-300 hover:text-[#4efff1] hover:drop-shadow"
+            className="w-max font-poppins text-[1.8vw] text-heading transition duration-300 hover:text-[#4efff1] hover:drop-shadow 4xl:text-[34px]"
             href="mailto:contact@markmihalyi.hu"
           >
             contact@markmihalyi.hu

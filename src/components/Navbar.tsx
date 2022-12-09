@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
 
   return (
     <header className="flex flex-col">
-      <div className="mx-[4vw] mt-[3vw] flex justify-between sm:mx-4 md:mx-[2.5vw] lg:mx-[4vw] xl:mx-[4.5vw] 2xl:mx-[7vw]">
+      <div className="mx-[4vw] mt-[3vw] flex justify-between sm:mx-4 md:mx-[2.5vw] lg:mx-[4vw] xl:mx-[4.5vw] 2xl:mx-[7vw] 4xl:mx-[134px]">
         {/* Mobilos navbar */}
         <div className="flex items-center lg:hidden" onClick={handleMobileMenuClick}>
           <Menu>

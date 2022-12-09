@@ -30,7 +30,7 @@ const Document = () => {
           }}
         />
       </Head>
-      <body>
+      <body className="m-auto max-w-[1920px]">
         <Main />
         <NextScript />
       </body>
