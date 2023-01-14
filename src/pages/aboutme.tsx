@@ -29,7 +29,7 @@ const AboutMe: NextPage = () => {
         <title>About me | Márk Mihályi</title>
       </Head>
 
-      <main className="flex h-[75vh] flex-col items-center justify-center sm:h-[80vh] md:h-[85vh] lg:h-[85vh]">
+      <main className="flex flex-col items-center justify-center xl:h-[85vh]">
         <span className="mb-5 max-w-[18rem]">
           <Transition
             show={showTitle}

@@ -24,7 +24,7 @@ const Contact: NextPage = () => {
       </Head>
 
       <Transition
-        className="flex h-[80vh] flex-col items-center justify-center"
+        className="flex h-[78vh] flex-col items-center justify-center"
         show={showText}
         enter="transition-opacity duration-[800ms] delay-100"
         enterFrom="opacity-0"
