@@ -14,7 +14,7 @@ export default defineNextConfig({
   reactStrictMode: false,
   swcMinify: true,
   i18n: {
-    locales: ['hu'],
-    defaultLocale: 'hu',
+    locales: ['en'],
+    defaultLocale: 'en',
   },
 });
