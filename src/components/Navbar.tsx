@@ -1,8 +1,8 @@
 import { Menu, Transition } from '@headlessui/react';
+import SocialMediaButton, { SCButtonProps } from 'components/SocialMediaButton';
 
 import { Bars3Icon } from '@heroicons/react/24/solid';
 import GitHub from 'assets/GitHub.png';
-import Image from 'next/image';
 import Link from './Link';
 import LinkedIn from 'assets/LinkedIn.png';
 import NavbarItem from './NavbarItem';
@@ -16,6 +16,26 @@ const pages: Array<{ href: string; label: string }> = [
   { href: '/aboutme', label: 'About me' },
   { href: '/uses', label: 'Uses' },
   { href: '/contact', label: 'Contact' },
+];
+
+const socialMediaButtons: Array<SCButtonProps> = [
+  {
+    className: 'mr-4 lg:mr-7',
+    href: 'https://linkedin.com/in/markmihalyi/',
+    image: LinkedIn,
+    alt: 'LinkedIn',
+  },
+  {
+    className: 'mr-4 lg:mr-7',
+    href: 'https://github.com/markmihalyi',
+    image: GitHub,
+    alt: 'GitHub',
+  },
+  {
+    href: 'https://twitter.com/_markmihalyi',
+    image: Twitter,
+    alt: 'Twitter',
+  },
 ];
 
 const Navbar: React.FC = () => {
@@ -110,49 +130,15 @@ const Navbar: React.FC = () => {
 
       {/* Közösségi média gombok */}
       <div className="flex pt-[6px]">
-        <a
-          className="mr-4 lg:mr-7"
-          href="https://linkedin.com/in/markmihalyi/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Image
-            src={LinkedIn}
-            alt="LinkedIn"
-            draggable={false}
-            priority={true}
-            width={32}
-            height={32}
-            layout="fixed"
+        {socialMediaButtons.map((button) => (
+          <SocialMediaButton
+            key={button.href}
+            className={button.className}
+            href={button.href}
+            image={button.image}
+            alt={button.alt}
           />
-        </a>
-        <a
-          className="mr-4 lg:mr-7"
-          href="https://github.com/markmihalyi"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Image
-            src={GitHub}
-            alt="GitHub"
-            draggable={false}
-            priority={true}
-            width={32}
-            height={32}
-            layout="fixed"
-          />
-        </a>
-        <a href="https://twitter.com/_markmihalyi" target="_blank" rel="noreferrer">
-          <Image
-            src={Twitter}
-            alt="Twitter"
-            draggable={false}
-            priority={true}
-            width={32}
-            height={32}
-            layout="fixed"
-          />
-        </a>
+        ))}
       </div>
     </header>
   );
