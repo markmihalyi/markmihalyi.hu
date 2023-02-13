@@ -53,7 +53,7 @@ const Uses: NextPage = () => {
           leaveTo="opacity-0"
         >
           <Terminal
-            title="markmihalyi.hu/uses"
+            title="markmihalyi.com/uses"
             className="mb-8 w-[95vw] max-w-[1280px] lg:mb-0 lg:w-[92vw] xl:w-[91vw]"
           >
             <div className="h-full px-10 py-10 font-fira-code text-base lg:flex lg:flex-row lg:flex-wrap lg:justify-between xl:py-28 xl:text-xl 2xl:py-32 3xl:py-40">

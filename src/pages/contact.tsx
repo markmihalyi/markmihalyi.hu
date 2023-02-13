@@ -39,9 +39,9 @@ const Contact: NextPage = () => {
           </h1>
           <a
             className="w-max font-poppins text-[1.8vw] text-heading transition duration-300 hover:text-[#4efff1] hover:drop-shadow 4xl:text-[34px]"
-            href="mailto:contact@markmihalyi.hu"
+            href="mailto:contact@markmihalyi.com"
           >
-            contact@markmihalyi.hu
+            contact@markmihalyi.com
           </a>
         </div>
         <div className="flex flex-col items-center text-center lg:hidden">
@@ -53,9 +53,9 @@ const Contact: NextPage = () => {
           </h1>
           <a
             className="w-max font-poppins text-[4.5vw] text-heading transition duration-300 active:text-[#4efff1] sm:text-[3.8vw] md:text-[3.2vw]"
-            href="mailto:contact@markmihalyi.hu"
+            href="mailto:contact@markmihalyi.com"
           >
-            contact@markmihalyi.hu
+            contact@markmihalyi.com
           </a>
         </div>
       </Transition>

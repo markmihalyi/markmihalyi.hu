@@ -53,7 +53,7 @@ const AboutMe: NextPage = () => {
           leaveTo="opacity-0"
         >
           <Terminal
-            title="markmihalyi.hu/aboutme"
+            title="markmihalyi.com/aboutme"
             className="mb-8 w-[95vw] max-w-[1280px] lg:mb-0 lg:w-[92vw] xl:w-[91vw]"
           >
             <div className="px-10 py-10 text-justify font-fira-code text-base lg:text-xl xl:py-14 2xl:py-16 3xl:py-20">

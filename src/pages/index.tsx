@@ -80,7 +80,7 @@ const Home: NextPage = () => {
             leaveTo="opacity-0"
           >
             <Terminal
-              title="markmihalyi.hu"
+              title="markmihalyi.com"
               className="h-[45vw] max-h-[490px] w-[92vw] max-w-[1000px] sm:h-[25vw] sm:w-[74vw] md:h-[24vw] md:w-[59vw] xl:h-[18vw] xl:w-[37vw] 4xl:h-[345px] 4xl:w-[710px]"
             >
               <div className="ml-[3vw] flex h-full flex-col justify-center overflow-y-hidden overflow-x-visible whitespace-nowrap font-jetbrains-mono text-xs font-medium sm:ml-[2vw] sm:text-xs md:ml-[2.5vw] md:text-[1.4vw] lg:ml-[1.5vw] lg:text-[1.5vw] xl:text-[0.9vw] 3xl:text-[1.08rem] 4xl:ml-[28.8px]">
