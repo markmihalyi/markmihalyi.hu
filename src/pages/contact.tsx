@@ -33,7 +33,7 @@ const Contact: NextPage = () => {
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
-        <div className="hidden flex-col items-center text-center lg:flex">
+        <div role="main" className="hidden flex-col items-center text-center lg:flex">
           <h1 className="font-poppins text-[2vw] font-bold text-light 4xl:text-[38px]">
             Do you have a project in mind? Let{"'"}s make it happen!
           </h1>
@@ -44,13 +44,13 @@ const Contact: NextPage = () => {
             contact@markmihalyi.com
           </a>
         </div>
-        <div className="flex flex-col items-center text-center lg:hidden">
+        <div role="main" className="flex flex-col items-center text-center lg:hidden">
           <h1 className="font-poppins text-[5vw] font-bold text-light md:text-[4vw]">
             Do you have a project in mind?
           </h1>
-          <h1 className="mb-3 font-poppins text-[7vw] font-bold text-light sm:mb-3 sm:text-[5.8vw] md:mb-4 md:text-[5vw]">
+          <h2 className="mb-3 font-poppins text-[7vw] font-bold text-light sm:mb-3 sm:text-[5.8vw] md:mb-4 md:text-[5vw]">
             Let{"'"}s make it happen!
-          </h1>
+          </h2>
           <a
             className="w-max font-poppins text-[4.5vw] text-heading transition duration-300 active:text-[#4efff1] sm:text-[3.8vw] md:text-[3.2vw]"
             href="mailto:contact@markmihalyi.com"

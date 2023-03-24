@@ -30,7 +30,7 @@ const AboutMe: NextPage = () => {
       </Head>
 
       <main className="flex flex-col items-center justify-center xl:h-[85vh]">
-        <span className="mb-5 max-w-[18rem]">
+        <h1 className="mb-5 max-w-[18rem]">
           <Transition
             show={showTitle}
             enter="transition-opacity duration-1000 delay-100"
@@ -42,7 +42,7 @@ const AboutMe: NextPage = () => {
           >
             <Image src={AboutMe_Heading} alt="About me" draggable={false} priority={true} />
           </Transition>
-        </span>
+        </h1>
         <Transition
           show={showTerminal}
           enter="transition duration-1000 delay-100"

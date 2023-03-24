@@ -30,7 +30,7 @@ const Uses: NextPage = () => {
       </Head>
 
       <main className="flex flex-col items-center justify-center lg:h-[85vh]">
-        <span className="mb-5 max-w-[9rem]">
+        <h1 className="mb-5 max-w-[9rem]">
           <Transition
             show={showTitle}
             enter="transition-opacity duration-1000 delay-100"
@@ -42,7 +42,7 @@ const Uses: NextPage = () => {
           >
             <Image src={Uses_Heading} alt="Uses" draggable={false} priority={true} />
           </Transition>
-        </span>
+        </h1>
         <Transition
           show={showTerminal}
           enter="transition duration-1000 delay-100"
