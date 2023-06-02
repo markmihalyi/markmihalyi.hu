@@ -72,7 +72,7 @@ const Uses: NextPage = () => {
                   <span className="font-medium">RAM:</span> 32GB DDR4 3200MHz
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
-                  <span className="font-medium">SSD:</span> 512GB M.2 NVME
+                  <span className="font-medium">SSD:</span> 1536GB M.2 NVME
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
                   <span className="font-medium">OS:</span> Windows 11 Pro
