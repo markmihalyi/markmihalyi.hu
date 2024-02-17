@@ -1,11 +1,11 @@
+import { Transition } from '@headlessui/react';
 import AboutMe_Heading from 'assets/AboutMe.png';
+import { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import { NextPage } from 'next';
 import React from 'react';
-import Terminal from '../components/Terminal';
-import { Transition } from '@headlessui/react';
 import useLoading from '../common/hooks/useLoading';
+import Terminal from '../components/Terminal';
 
 const AboutMe: NextPage = () => {
   const [showTitle, setShowTitle] = React.useState(false);
@@ -53,7 +53,7 @@ const AboutMe: NextPage = () => {
           leaveTo="opacity-0"
         >
           <Terminal
-            title="markmihalyi.com/aboutme"
+            title="markmihalyi.hu/aboutme"
             className="mb-8 w-[95vw] max-w-[1280px] lg:mb-0 lg:w-[92vw] xl:w-[91vw]"
           >
             <div className="px-10 py-10 text-justify font-fira-code text-base lg:text-xl xl:py-14 2xl:py-16 3xl:py-20">

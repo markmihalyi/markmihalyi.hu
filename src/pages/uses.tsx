@@ -1,11 +1,11 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import { NextPage } from 'next';
-import React from 'react';
-import Terminal from '../components/Terminal';
 import { Transition } from '@headlessui/react';
 import Uses_Heading from 'assets/Uses.png';
+import { NextPage } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
+import React from 'react';
 import useLoading from '../common/hooks/useLoading';
+import Terminal from '../components/Terminal';
 
 const Uses: NextPage = () => {
   const [showTitle, setShowTitle] = React.useState(false);
@@ -53,7 +53,7 @@ const Uses: NextPage = () => {
           leaveTo="opacity-0"
         >
           <Terminal
-            title="markmihalyi.com/uses"
+            title="markmihalyi.hu/uses"
             className="mb-8 w-[95vw] max-w-[1280px] lg:mb-0 lg:w-[92vw] xl:w-[91vw]"
           >
             <div className="h-full px-10 py-10 font-fira-code text-base lg:flex lg:flex-row lg:flex-wrap lg:justify-between xl:py-28 xl:text-xl 2xl:py-32 3xl:py-40">
