@@ -16,9 +16,9 @@ type Code = {
 const codes = new Map<string, Code>();
 codes.set('location', { value: 'Hungary' });
 codes.set('languages_spoken', { value: ['hu_HU', 'en_US'] });
-codes.set('programming_languages', { value: ['TypeScript', 'JavaScript'] });
-codes.set('technologies', { value: ['React', 'Next.js', 'Express.js', 'Node.js'] });
-codes.set('databases', { value: ['MySQL', 'MongoDB'] });
+codes.set('programming_languages', { value: ['TypeScript', 'JavaScript', 'C#'] });
+codes.set('technologies', { value: ['Next.js', 'React', 'Express', 'ASP.NET'] });
+codes.set('databases', { value: ['MySQL', 'Microsoft SQL Server', 'MongoDB'] });
 
 const Home: NextPage = () => {
   const [showTitle, setShowTitle] = React.useState(false);
