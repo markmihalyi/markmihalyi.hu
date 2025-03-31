@@ -81,13 +81,13 @@ const Uses: NextPage = () => {
               <div className="mb-6 flex flex-col text-center lg:ml-12 lg:mb-0">
                 <p className="font-bold tracking-wide text-heading">SOFTWARE</p>
                 <p className="mt-1 font-light tracking-tight text-light lg:mt-2">
-                  <span className="font-medium">Editor:</span> Visual Studio Code
+                  <span className="font-medium">Editor:</span> Visual Studio, VS Code
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
                   <span className="font-medium">Project management:</span> Trello
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
-                  <span className="font-medium">Testing APIs:</span> Insomnia
+                  <span className="font-medium">Testing APIs:</span> Postman
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
                   <span className="font-medium">Web design:</span> Figma
@@ -96,7 +96,7 @@ const Uses: NextPage = () => {
               <div className="mb-6 flex flex-col text-center lg:mb-0">
                 <p className="font-bold tracking-wide text-heading">PERIPHERALS</p>
                 <p className="mt-1 font-light tracking-tight text-light lg:mt-2">
-                  <span className="font-medium">Mouse:</span> Logitech G703
+                  <span className="font-medium">Mouse:</span> Razer Deathadder V2 X
                 </p>
                 <p className="mt-0.5 font-light tracking-tight text-light lg:mt-1">
                   <span className="font-medium">Keyboard:</span> Cooler Master CK550
